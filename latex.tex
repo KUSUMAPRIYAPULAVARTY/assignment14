@@ -159,42 +159,46 @@ Transformation matrix is invertible if
 \begin{enumerate}
     \item $\mathbbf{T}$ is one to one mapping,that is for a matrix $\vec{A} \in \vec{V}$ there exists a unique $\vec{C} \in \vec{W}$ such that
     \begin{align}
-        \mathbbf{T}(\vec{A})=\vec{B}\vec{A}=\vec{C} \label{1}
+        \mathbbf{T}(\vec{A})=\vec{B}\vec{A}=\vec{C}
     \end{align}
-    \item $\mathbbf{T}$ must be onto, that is range($\vec{B}$)=$\vec{W}$ that is,
-    \begin{align}
-      \text{rank}(\vec{B}) =p \label{3}
-    \end{align}
+    \item $\mathbbf{T}$ must be onto, that is range($\vec{B}$)=$\vec{W}$ 
 \end{enumerate}
-Let us assume that $\mathbbf{T}$ is invertible. Therefore,there exists an operator $\mathbbf{U}$ from $\vec{W}$ to $\vec{V}$ such that
+\subsection{Case 1}
+Let us assume that $\mathbbf{T}$ is invertible.\\ Let inverse of $\mathbbf{T}$ is $\mathbbf{U}$ from $\vec{W}$ to $\vec{V}$
 \begin{align}
-    \mathbbf{U}(\vec{C})=\vec{U}\vec{C}=\vec{A} \label{2}
+    \mathbbf{U}(\vec{C})=\vec{U}\vec{C}=\vec{A} 
 \end{align}
 where $\vec{U}_{m \times p}$ is the inverse transformation matrix.\\
-If $\vec{B}$ is one to one, onto then from \eqref{1} and \eqref{2} $\vec{U}$ is also one to one which implies range($\vec{U}$) is $\vec{V}$
 \begin{align}
-    \text{rank}(\vec{U})=m \label{4}
+  \mathbbf{U}(\vec{C})=\vec{U}(\vec{B}\vec{A})=\vec{A}\\
+  \implies \vec{U}\vec{B}=\vec{I}_{m \times m}\label{3}\\
+  \mathbbf{T}(\vec{A})=\vec{B}(\vec{U}\vec{C})=\vec{C}\\
+  \implies \vec{B}\vec{U}=\vec{I}_{p \times p}\label{4}
 \end{align}
-But the relation between transformation matrix and its inverse is
+where $\vec{I}$ is the identity matrix.\\
+Matrix $\vec{B}$ is invertible only if
 \begin{align}
-   \vec{U}=\vec{B}^{-1} 
+    \vec{B}\vec{U}=\vec{U}\vec{B}=\vec{I}\label{2}
 \end{align}
-which means that the rank of $\vec{B},\vec{U}$ must be same.\\
- So,from \eqref{3},\eqref{4} we can write 
+ So,from \eqref{3},\eqref{4},\eqref{2} 
 \begin{align}
     p=m
 \end{align}
-So, if $\mathbbf{T}$ is invertible linear transformation, then matrix $\vec{B}$ is invertible and $p=m$
-\\
-\\
-Now,consider it the other way.We consider $p=m$ and $\vec{B}$ is an invertible $m \times m$ matrix and wish to prove that $\mathbbf{T}$ is an invertible transformation.
-Since $\vec{B}$ is invertible, rank of $\vec{B}$ is $m$ so $\mathbbf{T}$ is onto.\\
-To prove $\mathbbf{T}$ is one to one, consider the matrix $\vec{A} \in \vec{V}$.Since $\vec{B}^{-1}$ exists, we can write
+So, if $\mathbbf{T}$ is invertible linear transformation, then matrix $\vec{B}_{m \times m}$ is invertible and $p=m$
+\subsection{Case 2}
+ Consider $p=m$ and $\vec{B}$ is an invertible $m \times m$ matrix.\\
+Since $\vec{B}$ is invertible,
+\begin{align}
+    \text{rank}(\vec{B})=m\\
+    \implies \text{range}(\vec{T})=\vec{W}
+\end{align}
+Consider the matrix $\vec{A} \in \vec{V}$.Since $\vec{B}^{-1}$ exists, we can write
 \begin{align}
     \vec{B}^{-1}(\mathbbf{T}(\vec{A}))= \vec{B}^{-1}(\vec{B}\vec{A})\\=(\vec{B}^{-1}\vec{B})\vec{A}\\=\vec{A}
 \end{align}
-So, $\vec{B}^{-1}$ is the transformation matrix that maps every $\mathbbf{T}(\vec{A}) \in \vec{W}$ to $\vec{A} \in \vec{V}$\\
-So, $\mathbbf{T}$ is invertible.\\
-Hence,from both the cases of consideration, $\mathbbf{T}$ is invertible if and only if $p=m$ and $\vec{B}$ is an invertible $m \times m$ matrix.
+So, every $\mathbbf{T}(\vec{A}) \in \vec{W}$ is uniquely transformed to $\vec{A} \in \vec{V}$ by $\vec{B}^{-1}$\\
+So, $\mathbbf{T}$ is invertible.
+\subsection{Conclusion}
+From case 1,case 2 $\mathbbf{T}$ is invertible if and only if $p=m$ and $\vec{B}$ is an invertible $m \times m$ matrix.
 \end{document}
 
