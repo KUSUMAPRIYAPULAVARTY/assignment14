@@ -155,36 +155,39 @@ Let $p,m,n$ be positive integers and $\mathbbf{F}$ a field.Let $\vec{V}$ be the 
     \mathbbf{T}(\vec{A})=\vec{B}\vec{A}
 \end{align}
 So, $\vec{B}$ is the transformation matrix.\\
-Transformation matrix is invertible if
+$\vec{B}$ is invertible if
 \begin{enumerate}
-    \item $\mathbbf{T}$ is one to one mapping,that is for a matrix $\vec{A} \in \vec{V}$ there exists a unique $\vec{C} \in \vec{W}$ such that
+    \item $\mathbbf{T}$ is one to one mapping,that is
     \begin{align}
-        \mathbbf{T}(\vec{A})=\vec{B}\vec{A}=\vec{C}
+       \vec{B}\vec{A}=\vec{B}\vec{A'}\\
+       \implies \vec{A}=\vec{A'}
     \end{align}
     \item $\mathbbf{T}$ must be onto, that is range($\vec{B}$)=$\vec{W}$ 
 \end{enumerate}
 \subsection{Case 1}
-Let us assume that $\mathbbf{T}$ is invertible.\\ Let inverse of $\mathbbf{T}$ is $\mathbbf{U}$ from $\vec{W}$ to $\vec{V}$
+Let us assume that $\mathbbf{T}$ is invertible with $\mathbbf{T}^{-1}$ from $\vec{W}$ to $\vec{V}$\\
+For $\vec{C} \in \vec{W}$ 
 \begin{align}
-    \mathbbf{U}(\vec{C})=\vec{U}\vec{C}=\vec{A} 
+    \mathbbf{T}^{-1}(\vec{C})=\vec{B}^{-1}\vec{C}=\vec{A} \\
+    \vec{C}=\vec{B}\vec{A}
 \end{align}
-where $\vec{U}_{m \times p}$ is the inverse transformation matrix.\\
+Consider the following
 \begin{align}
-  \mathbbf{U}(\vec{C})=\vec{U}(\vec{B}\vec{A})=\vec{A}\\
-  \implies \vec{U}\vec{B}=\vec{I}_{m \times m}\label{3}\\
-  \mathbbf{T}(\vec{A})=\vec{B}(\vec{U}\vec{C})=\vec{C}\\
-  \implies \vec{B}\vec{U}=\vec{I}_{p \times p}\label{4}
+  \mathbbf{T}^{-1}(\vec{C})=\vec{B}^{-1}(\vec{B}\vec{A})=\vec{A}\\
+  \implies \vec{B}^{-1}\vec{B}=\vec{I}_{m \times m}\label{3}\\
+  \mathbbf{T}(\vec{A})=\vec{B}(\vec{B}^{-1}\vec{C})=\vec{C}\\
+  \implies \vec{B}\vec{B}^{-1}=\vec{I}_{p \times p}\label{4}
 \end{align}
 where $\vec{I}$ is the identity matrix.\\
-Matrix $\vec{B}$ is invertible only if
+But
 \begin{align}
-    \vec{B}\vec{U}=\vec{U}\vec{B}=\vec{I}\label{2}
+    \vec{B}\vec{B}^{-1}=\vec{B}^{-1}\vec{B}=\vec{I}\label{2}
 \end{align}
  So,from \eqref{3},\eqref{4},\eqref{2} 
 \begin{align}
     p=m
 \end{align}
-So, if $\mathbbf{T}$ is invertible linear transformation, then matrix $\vec{B}_{m \times m}$ is invertible and $p=m$
+So,$\vec{B}$ is an invertible $m \times m$ matrix
 \subsection{Case 2}
  Consider $p=m$ and $\vec{B}$ is an invertible $m \times m$ matrix.\\
 Since $\vec{B}$ is invertible,
@@ -192,11 +195,13 @@ Since $\vec{B}$ is invertible,
     \text{rank}(\vec{B})=m\\
     \implies \text{range}(\vec{B})=\vec{W}
 \end{align}
-Consider the matrix $\vec{A} \in \vec{V}$.Since $\vec{B}^{-1}$ exists, we can write
+Consider the matrix $\vec{A},\vec{A'} \in \vec{V}$ such that
 \begin{align}
-    \vec{B}^{-1}(\mathbbf{T}(\vec{A}))= \vec{B}^{-1}(\vec{B}\vec{A})\\=(\vec{B}^{-1}\vec{B})\vec{A}\\=\vec{A}
+    \vec{B}\vec{A}= \vec{B}\vec{A'}\\
+    \vec{B}^{-1}( \vec{B}\vec{A})= \vec{B}^{-1}(\vec{B}\vec{A'})\\
+    (\vec{B}^{-1} \vec{B})\vec{A}= (\vec{B}^{-1}\vec{B})\vec{A'}\\
+    \implies \vec{A}=\vec{A}^{_1}
 \end{align}
-So, every $\mathbbf{T}(\vec{A}) \in \vec{W}$ is uniquely transformed to $\vec{A} \in \vec{V}$ by $\vec{B}^{-1}$\\
 So, $\mathbbf{T}$ is invertible.
 \subsection{Conclusion}
 From case 1,case 2 $\mathbbf{T}$ is invertible if and only if $p=m$ and $\vec{B}$ is an invertible $m \times m$ matrix.
