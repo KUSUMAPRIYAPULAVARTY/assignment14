@@ -258,14 +258,23 @@ The elementary matrix that performs this is
     \text{Let }\vec{A}=\myvec{1&2&2&5\\1&3&6&7\\4&9&2&6}\\
     \mathbbf{T}(\vec{A})=\vec{B}\vec{A}\\=
     \myvec{1&0&0\\0&1&0\\0&1&1}\myvec{1&2&2&5\\1&3&6&7\\4&9&2&6}\\
-    =\myvec{1&2&2&5\\1&3&6&7\\5&12&8&13}
+    =\myvec{1&2&2&5\\1&3&6&7\\5&12&8&13}\\
+    =\vec{C} \in \vec{W}
 \end{align}
-The inverse transformation $\mathbbf{T}^{-1}:\vec{W} \rightarrow \vec{V}$ subtracts row2 from row 3 for a matrix $\vec{C} \in \vec{W}$ and is performed by elementary matrix
+Let transformation $\mathbbf{T}_1:\vec{W} \rightarrow \vec{V}$ subtracts row2 from row 3 for a matrix $\vec{C} \in \vec{W}$ and is performed by elementary matrix
 \begin{align}
 \vec{U}=\myvec{1&0&0\\0&1&0\\0&-1&1}\\
      \text{Let }\vec{C}=\myvec{1&2&2&5\\1&3&6&7\\5&12&8&13}\\
-     \mathbbf{T}^{-1}(\vec{C})=\myvec{1&0&0\\0&1&0\\0&-1&1}\myvec{1&2&2&5\\1&3&6&7\\5&12&8&13}\\
+     \mathbbf{T}_1(\vec{C})=\myvec{1&0&0\\0&1&0\\0&-1&1}\myvec{1&2&2&5\\1&3&6&7\\5&12&8&13}\\
      =\myvec{1&2&2&5\\1&3&6&7\\4&9&2&6}\\=\vec{A}\\
+     \implies \mathbbf{T}_1(\vec{C})=\vec{A}\\
+     \mathbbf{T}_1(\mathbbf{T}(\vec{A}))=\vec{A}\\
+     \text{and  } \mathbbf{T}(\vec{A})=\vec{C}\\
+     \implies \mathbbf{T}(\mathbbf{T}_1(\vec{C}))=\vec{C}
+     \end{align}
+     So,$\mathbbf{T}_1$ is the inverse transformation of $\mathbbf{T}$ and
+     \begin{align}
+     \mathbbf{T}_1=\mathbbf{T}^{-1}\\
      \text{Also,  } \vec{U}\vec{B}=\myvec{1&0&0\\0&1&0\\0&-1&1}\myvec{1&0&0\\0&1&0\\0&1&1}\\
      =\myvec{1&0&0\\0&1&0\\0&0&1}\\
      \vec{B}\vec{U}=\myvec{1&0&0\\0&1&0\\0&1&1}\myvec{1&0&0\\0&1&0\\0&-1&1}\\=\myvec{1&0&0\\0&1&0\\0&0&1}\\
