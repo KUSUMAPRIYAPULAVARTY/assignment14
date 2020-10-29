@@ -186,15 +186,19 @@ $\vec{B}$ is invertible if
     \item $\mathbbf{T}$ must be onto, that is range($\vec{B}$)=$\vec{W}$ 
 \end{enumerate}
 \subsection{Case 1}
-Let us assume that $\mathbbf{T}$ is invertible with $\mathbbf{T}^{-1}$ from $\vec{W}$ to $\vec{V}$\\
-For $\vec{C} \in \vec{W}$ 
+Let us assume that $\mathbbf{T}$ is invertible with inverse transformation $\mathbbf{T}_1$ from $\vec{W}$ to $\vec{V}$\\
+Therefore,for $\vec{C} \in \vec{W}$ 
 \begin{align}
-    \mathbbf{T}^{-1}(\vec{C})=\vec{B}^{-1}\vec{C}=\vec{A} \\
-    \vec{C}=\vec{B}\vec{A}
+\mathbbf{T}(\mathbbf{T}_1(\vec{C}))=\vec{C}\\
+\text{and  }\mathbbf{T}_1(\mathbbf{T}(\vec{A}))=\vec{A}\\
+\text{Let }\mathbbf{T}(\vec{A})=\vec{C}\\
+\implies \mathbbf{T}_1(\vec{C})=\vec{A}\\
+\implies \vec{B}(\mathbbf{T}_1(\vec{C}))=\vec{B}\vec{A}=\vec{C}
 \end{align}
+So,the inverse transformation matrix is $\vec{B}^{-1}$\\
 Consider the following
 \begin{align}
-  \mathbbf{T}^{-1}(\vec{C})=\vec{B}^{-1}(\vec{B}\vec{A})=\vec{A}\\
+  \mathbbf{T}_1(\vec{C})=\vec{B}^{-1}(\vec{B}\vec{A})=\vec{A}\\
   \implies \vec{B}^{-1}\vec{B}=\vec{I}_{m \times m}\label{3}\\
   \mathbbf{T}(\vec{A})=\vec{B}(\vec{B}^{-1}\vec{C})=\vec{C}\\
   \implies \vec{B}\vec{B}^{-1}=\vec{I}_{p \times p}\label{4}
