@@ -190,9 +190,18 @@ Let us assume that $\mathbbf{T}$ is invertible with inverse transformation $\mat
 \begin{align}
   \mathbbf{T}(\vec{A})=\vec{B}\vec{A} \in \vec{W}\\
   \implies \mathbbf{T}_1(\vec{B}\vec{A})=\vec{A} \in \vec{V}\\
-  \text{dim}(\vec{V})=mn, \text{dim}(\vec{W})=pn\label{6}
+  \text{dim}(\vec{V})=mn, \text{dim}(\vec{W})=pn\label{1}
 \end{align}
-Let $\cbrak{\vec{V}_1,\vec{V}_2,\hdots,\vec{V}_{mn}}$ be the basis for $\vec{V}$\\
+Since $ \mathbbf{T}$ is one-one mapping, the zero vector in $\vec{V}, \vec{0}_{m \times n}$ is uniquely mapped to 
+\begin{align}
+   \mathbbf{T}(\vec{0}_{m \times n})= \vec{B} \vec{0}_{m \times n}=\vec{0}_{p \times n}\\
+     \text{So, }\vec{B}\vec{A}=\vec{0} \iff \vec{A}=\vec{0}\label{3}
+\end{align}
+Let $\cbrak{\vec{V}_1,\vec{V}_2,\hdots,\vec{V}_{mn}}$ be the basis for $\vec{V}$
+\begin{align}
+    c_1\vec{V}_1+ c_2\vec{V}_2+\hdots+ c_{mn}\vec{V}_{mn}=\vec{0}\\
+    \iff c_1,c_2,\hdots,c_{mn} \in \mathbbf{F}=0\label{2}
+\end{align}
 Any matrix $\vec{A} \in \vec{V}$ can be written as
 \begin{align}
  \vec{A}= \sum_{i=1}^{mn} \alpha_i\vec{V}_i  
@@ -202,17 +211,19 @@ Since $\mathbbf{T}$ is onto, any matrix $\vec{C} \in \vec{W}$ can be expressed a
     \vec{C}=\vec{B}\left( \sum_{i=1}^{mn} \alpha_i\vec{V}_i\right)\\
     =\sum_{i=1}^{mn} \alpha_i(\vec{B}\vec{V}_i)
 \end{align}
-So, $\cbrak{\vec{B}\vec{V}_1,\vec{B}\vec{V}_2,\hdots,\vec{B}\vec{V}_{mn}}$ forms basis of $\vec{W}$
+So, the set $\vec{S}=\cbrak{\vec{B}\vec{V}_1,\vec{B}\vec{V}_2,\hdots,\vec{B}\vec{V}_{mn}}$ forms basis of $\vec{W}$ if all matrices in it are linearly independent.
 \begin{align}
-   \eqref{6} \implies pn=mn\\
-    p=m
+    c_1(\vec{B}\vec{V}_1)+ c_2(\vec{B}\vec{V}_2)+\hdots+ c_{mn}(\vec{B}\vec{V}_{mn})=\vec{0}\\
+     \vec{B}( c_1\vec{V}_1+ c_2\vec{V}_2+\hdots+ c_{mn}\vec{V}_{mn})=\vec{0}\\
+    \eqref{3} \implies c_1\vec{V}_1+\hdots+ c_{mn}\vec{V}_{mn}=0\\
+    \iff c_1,c_2,\hdots,c_{mn}=0 (\text{from \eqref{2}})
 \end{align}
-Since $ \mathbbf{T}$ is one-one mapping, the zero vector in $\vec{V}, \vec{0}_{m \times n}$ is uniquely mapped to 
+So,the set $\vec{S}$ with cardinality $mn$ is basis for $\vec{W}$ 
 \begin{align}
-   \mathbbf{T}(\vec{0}_{m \times n})= \vec{B} \vec{0}_{m \times n}=\vec{0}_{m \times n}\\
-     \text{So, }\vec{B}\vec{A}=\vec{0} \iff \vec{A}=\vec{0}
+   \eqref{1} \implies pn=mn\\
+    p=m\label{4}
 \end{align}
-This proves that $\vec{B}$ is invertible $m \times m$ matrix.
+\eqref{3},\eqref{4} prove that $\vec{B}$ is invertible $m \times m$ matrix.
 \subsection{Case 2}
  Consider $p=m$ and $\vec{B}$ is an invertible $m \times m$ matrix.\\
 Verifying if $\mathbbf{T}$ is onto,\\
@@ -230,9 +241,9 @@ The set $\vec{M}= $ \cbrak{\vec{B}\vec{A}_1,\vec{B}\vec{A}_2,\hdots,\vec{B}\vec{
 Since $\vec{B}$ is non-singular,
 \begin{align}
     (c_1\vec{A}_1+c_2\vec{A}_2+\hdots+c_{mn}\vec{A}_{mn})=\vec{0}\\
-    \implies c_1,c_2,\hdots,c_{mn}=0
+    \iff c_1,c_2,\hdots,c_{mn}=0
 \end{align}
-because \cbrak{\vec{A}_1,\vec{A}_2,\hdots,\vec{A}_{mn}} are linearly independent\\
+because \cbrak{\vec{A}_1,\vec{A}_2,\hdots,\vec{A}_{mn}} are linearly independent\\ 
 So,$\vec{M}$ forms basis for $\vec{W}$\\
 Any vector $\vec{C} \in \vec{W}$ can be written as
 \begin{align}
@@ -280,9 +291,7 @@ Let transformation $\mathbbf{T}_1:\vec{W} \rightarrow \vec{V}$ subtracts row2 fr
      \begin{align}
      \mathbbf{T}_1=\mathbbf{T}^{-1}\\
      \vec{U}\vec{B}=\myvec{1&0&0\\0&1&0\\0&-1&1}\myvec{1&0&0\\0&1&0\\0&1&1}\\
-     =\myvec{1&0&0\\0&1&0\\0&0&1}
-     \end{align}
-     \begin{align}
+     =\myvec{1&0&0\\0&1&0\\0&0&1}\\
      \vec{B}\vec{U}=\myvec{1&0&0\\0&1&0\\0&1&1}\myvec{1&0&0\\0&1&0\\0&-1&1}\\=\myvec{1&0&0\\0&1&0\\0&0&1}\\
      \implies \vec{B}^{-1}=\vec{U}
 \end{align}
