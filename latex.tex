@@ -188,32 +188,31 @@ $\vec{B}$ is invertible if
 \subsection{Case 1}
 Let us assume that $\mathbbf{T}$ is invertible with inverse transformation $\mathbbf{T}_1$ from $\vec{W}$ to $\vec{V}$ that satisfies
 \begin{align}
-  \mathbbf{T}(\vec{A})=\vec{B}\vec{A} \in \vec{W}\label{6}\\
-  \implies \mathbbf{T}_1(\vec{B}\vec{A})=\vec{A} \in \vec{V}\label{7}
+  \mathbbf{T}(\vec{A})=\vec{B}\vec{A} \in \vec{W}\\
+  \implies \mathbbf{T}_1(\vec{B}\vec{A})=\vec{A} \in \vec{V}\\
+  \text{dim}(\vec{V})=mn, \text{dim}(\vec{W})=pn\label{6}
 \end{align}
-Since $ \mathbbf{T}$ and hence is $ \mathbbf{T}_1$ is one-one mapping, the zero vector in $\vec{V}, \vec{0}_{m \times n}$ is uniquely mapped to 
+Let $\cbrak{\vec{V}_1,\vec{V}_2,\hdots,\vec{V}_{mn}}$ be the basis for $\vec{V}$\\
+Any matrix $\vec{A} \in \vec{V}$ can be written as
 \begin{align}
-   \mathbbf{T}(\vec{0}_{m \times n})= \vec{B} \vec{0}_{m \times n}=\vec{0}_{p \times n}\\
-     \text{So, }\vec{B}\vec{A}=\vec{0} \iff \vec{A}=\vec{0}
+ \vec{A}= \sum_{i=1}^{mn} \alpha_i\vec{V}_i  
 \end{align}
-This proves that $\vec{B}$ is non-singular.\\
-Let us define $\mathbbf{T}_1$ that satisfies \eqref{7} as 
+Since $\mathbbf{T}$ is onto, any matrix $\vec{C} \in \vec{W}$ can be expressed as 
 \begin{align}
-    [\mathbbf{T}_1(\vec{C})]_{m \times n}=\vec{B}^{-1}_{m \times p}\vec{C}_{p\times n} \text{ where }\vec{C} \in \vec{W}\\
-    \eqref{7} \implies \vec{B}^{-1}(\vec{B}\vec{A}) =\vec{A}\\\implies \vec{B}^{-1}\vec{B}=\vec{I}_{m \times m}\label{3}\\
-    \eqref{6} \implies  \vec{B}(\vec{B}^{-1}\vec{C})=\vec{C}\\
-  \implies \vec{B}\vec{B}^{-1}=\vec{I}_{p \times p}\label{4}
+    \vec{C}=\vec{B}\left( \sum_{i=1}^{mn} \alpha_i\vec{V}_i\right)\\
+    =\sum_{i=1}^{mn} \alpha_i(\vec{B}\vec{V}_i)
 \end{align}
-where $\vec{I}$ is the identity matrix.
-But $\vec{B}$ is non singular 
+So, $\cbrak{\vec{B}\vec{V}_1,\vec{B}\vec{V}_2,\hdots,\vec{B}\vec{V}_{mn}}$ forms basis of $\vec{W}$
 \begin{align}
-  \vec{B}\vec{B}^{-1}= \vec{B}^{-1}\vec{B}=\vec{I}\label{2}
-\end{align}
- So,from \eqref{3},\eqref{4},\eqref{2} 
-\begin{align}
+   \eqref{6} \implies pn=mn\\
     p=m
 \end{align}
-and $\vec{B}$ is an invertible $m \times m$ matrix
+Since $ \mathbbf{T}$ is one-one mapping, the zero vector in $\vec{V}, \vec{0}_{m \times n}$ is uniquely mapped to 
+\begin{align}
+   \mathbbf{T}(\vec{0}_{m \times n})= \vec{B} \vec{0}_{m \times n}=\vec{0}_{m \times n}\\
+     \text{So, }\vec{B}\vec{A}=\vec{0} \iff \vec{A}=\vec{0}
+\end{align}
+This proves that $\vec{B}$ is invertible $m \times m$ matrix.
 \subsection{Case 2}
  Consider $p=m$ and $\vec{B}$ is an invertible $m \times m$ matrix.\\
 Verifying if $\mathbbf{T}$ is onto,\\
