@@ -188,9 +188,8 @@ $\vec{B}$ is invertible if
 \subsection{Case 1}
 Let us assume that $\mathbbf{T}$ is invertible with inverse transformation $\mathbbf{T}_1$ from $\vec{W}$ to $\vec{V}$ that satisfies
 \begin{align}
- \mathbbf{T}_1(\mathbbf{T}(\vec{A}))=\vec{A} \in \vec{V}\label{6}\\
-  \mathbbf{T}(\mathbbf{T}_1(\vec{C}))=\vec{C} \in \vec{W}\label{7}\\
-   \mathbbf{T}(\vec{A})=\vec{C} \implies  \mathbbf{T}_1(\vec{C})=\vec{A}
+  \mathbbf{T}(\vec{A})=\vec{B}\vec{A} \in \vec{W}\label{6}\\
+  \implies \mathbbf{T}_1(\vec{B}\vec{A})=\vec{A} \in \vec{V}\label{7}
 \end{align}
 Since $ \mathbbf{T}$ and hence is $ \mathbbf{T}_1$ is one-one mapping, the zero vector in $\vec{V}, \vec{0}_{m \times n}$ is uniquely mapped to 
 \begin{align}
@@ -198,11 +197,11 @@ Since $ \mathbbf{T}$ and hence is $ \mathbbf{T}_1$ is one-one mapping, the zero 
      \text{So, }\vec{B}\vec{A}=\vec{0} \iff \vec{A}=\vec{0}
 \end{align}
 This proves that $\vec{B}$ is non-singular.\\
-Let us define $\mathbbf{T}_1$ that satisfies \eqref{6},\eqref{7} as 
+Let us define $\mathbbf{T}_1$ that satisfies \eqref{7} as 
 \begin{align}
-    \mathbbf{T}_1(\vec{C})=\vec{B}^{-1}\vec{C}\\
-    \eqref{6} \implies \vec{B}^{-1}(\vec{B}\vec{A}) =\vec{A}\\\implies \vec{B}^{-1}\vec{B}=\vec{I}_{m \times m}\label{3}\\
-    \eqref{7} \implies  \vec{B}(\vec{B}^{-1}\vec{C})=\vec{C}\\
+    [\mathbbf{T}_1(\vec{C})]_{m \times n}=\vec{B}^{-1}_{m \times p}\vec{C}_{p\times n} \text{ where }\vec{C} \in \vec{W}\\
+    \eqref{7} \implies \vec{B}^{-1}(\vec{B}\vec{A}) =\vec{A}\\\implies \vec{B}^{-1}\vec{B}=\vec{I}_{m \times m}\label{3}\\
+    \eqref{6} \implies  \vec{B}(\vec{B}^{-1}\vec{C})=\vec{C}\\
   \implies \vec{B}\vec{B}^{-1}=\vec{I}_{p \times p}\label{4}
 \end{align}
 where $\vec{I}$ is the identity matrix.
